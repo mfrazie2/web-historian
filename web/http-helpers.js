@@ -17,6 +17,7 @@ exports.serveAssets = function(res, asset, callback) {
   // css, or anything that doesn't change often.)
 
   // if it's asking for a .ico...screw it
+  // referenced: https://gist.github.com/kentbrew/763822
   if (path.extname(asset) === '.ico') {
     res.end();
     return;

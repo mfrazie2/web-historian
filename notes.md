@@ -6,6 +6,7 @@
   - loading.html
   - serve back archived sites
 - complete methods in archive-helpers
+- return 404's for get requests that are not '/' or '/styles.css'
 
 
 - Get new site
