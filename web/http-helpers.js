@@ -53,4 +53,13 @@ exports.sendResponse = function(res, data, status) {
   res.end(data);
 };
 
+exports.gatherData = function(req, callback) {
+  var results = '';
+  req.on('data', function(data) {
+    results += data;
+  });
+  req.on('end', function() {
+    callback(results);
+  });
+};
 // As you progress, keep thinking about what helper functions you can put here!

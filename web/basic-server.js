@@ -9,13 +9,16 @@ initialize();
 
 var actions = {
   "GET": function(req, res) {
-    handler.handleRequest(req, res);
+    handler.handleGet(req, res);
   },
-  "POST": function(req, res) {}
+  "POST": function(req, res) {
+    handler.handlePost(req, res);
+  }
 };
 
 var port = 8080;
 var ip = "127.0.0.1";
+
 var server = http.createServer(function(req, res) {
   console.log('Received ' + req.method + ' request for ' + req.url);
   if(actions[req.method]) {

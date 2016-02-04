@@ -14,6 +14,3 @@
     - Serve loading site
     - Serve archived site
   
-  - Write to sites.txt
-    fs.appendFile('site url')
-  
