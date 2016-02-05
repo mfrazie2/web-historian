@@ -8,7 +8,7 @@
 - complete methods in archive-helpers
 - return 404's for get requests that are not '/' or '/styles.css'
 
-
+DONE!
 - Get new site
   - Site in list?
     - Serve loading site

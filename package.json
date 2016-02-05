@@ -4,7 +4,7 @@
   "main": "web/basic-server.js",
   "license": "Copyright 2014, Hack Reactor. All rights reserved.",
   "dependencies": {
-    "hashmap": "^2.0.4",
+    "node-uuid": "^1.4.7",
     "request": "^2.69.0"
   },
   "devDependencies": {

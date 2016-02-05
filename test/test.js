@@ -74,11 +74,11 @@ describe("server", function() {
 describe("archive helpers", function(){
   describe("#readListOfUrls", function () {
     it("should read urls from sites.txt", function (done){
-      var urlArray = ["example1.com", "example2.com"];
+      var urlArray = ["example1.com", "example2.com", "someurl.com"];
       fs.writeFileSync(archive.paths.list, urlArray.join("\n"));
 
       archive.readListOfUrls(function(urls){
-        expect(urls).to.deep.equal(urlArray);
+        expect(urls.split('\n')).to.deep.equal(urlArray);
         done();
       });
     });
@@ -139,7 +139,7 @@ describe("archive helpers", function(){
 
   describe("#downloadUrls", function () {
     it("should download all pending urls in the list", function (done) {
-      var urlArray = ["www.example.com", "www.google.com"];
+      var urlArray = ["http://www.example.com", "http://www.google.com"];
       archive.downloadUrls(urlArray);
 
       // Ugly hack to wait for all downloads to finish.

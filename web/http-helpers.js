@@ -11,7 +11,7 @@ exports.headers = headers = {
 };
 
 // serve static assets from a directory
-exports.serveAssets = function(res, asset, callback) {
+exports.serveAssets = function(res, asset, direction, callback) {
   // Write some code here that helps serve up your static files!
   // (Static files are things like html (yours or archived from others...),
   // css, or anything that doesn't change often.)
@@ -34,17 +34,17 @@ exports.serveAssets = function(res, asset, callback) {
   } else if (extname === '.css') {
     contentType = 'text/css';
   }
-  fs.readFile(archive.paths.siteAssets + filePath, function(err, content) {
+  fs.readFile(archive.paths[direction] + filePath, function(err, content) {
     if (err) {
       console.log(err);
-      res.writeHead(500);
+      res.writeHead(404);
       res.end();
     } else {
-      res.writeHead(200, {'Content-Type': contentType});
-      res.end(content, 'utf-8');
+      // res.writeHead(200, {'Content-Type': contentType});
+      // res.end(content, 'utf-8');
+      callback(content);
     }
   });
-
 };
 
 exports.sendResponse = function(res, data, status) {
