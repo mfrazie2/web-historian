@@ -18,5 +18,6 @@ fs.appendFile(__dirname + '/log.txt', 'cron job executed at' + new Date() + '\n'
 
 
 
+// crontab -e
 
 // * * * * * /usr/local/bin/node ~/development/hackreactor/floobits/2016-01-web-historian-gordon-mikef/workers/htmlfetcher.js
